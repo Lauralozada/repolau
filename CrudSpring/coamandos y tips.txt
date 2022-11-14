@@ -1,0 +1,104 @@
+comandos terminal swicht:
+// se configura con la ram
+//guardar la configuracion en la memoria NBRAM
+
+
+en
+reload
+
+desconprime el sistema operativo
+>en
+#exit
+modo usario
+
+modo priviligeado 
+>enable o en (podemos usar tecla tabulador)
+
+consultar comandos:
+Swicht#?
+
+// #exit (comando para devolverse)
+
+comando de configuracion
+Swicht#configure terminal
+
+//control z siempre se vuelve a modo priviligeado
+//buffer de ultimos 10 comandos usados 
+
+Configuracion en practica
+
+cambiar nombre Swicht // colocar un nombre que apunte hacia la ubicacion del dispositivo asi mismo para cambiar el nombre
+
+Swicht#hostname SPA_B210
+(se cambia el nombre del Swich)
+
+Guardar configuracion
+
+show running-config (ver configuraciones hechas)
+
+show startup-config (ver configuraciones guardadas)
+ 
+copy running-config startup-config (guardar informacion) 
+
+erase startup-config (borrar configuraciones del NBRAM)
+
+conf ter (configuracion global)
+
+enable ? (asignar clave)
+
+line console 0 (proteger la consola) 
+
+password (la contraseña que halla asignado).
+login (para ejecutar la proteccion).
+
+
+ecriptar contraseñas
+service pass
+service password-encryption
+banner motd (panel de bienbenida)
+
+// configurar dirrecion ip en un router
+getway puerta de configuraccion lan4t
+
+
+interface gigabitethernet y el puerto  (en modo global para le ingreso)
+ip addres 192.168.1.1 "mascara=" 255.255.255.0 (ip a la que se va a direccionar)
+no shutdown (encender interfaz despues de congigurar la ip)
+
+Protocolos 
+PDU (protocolo data unit)
+HTTP ((protocolo data unit) de http)
+FTP   (protocolo data unit de ftp)
+contador de saltos, va hasta 255  si llega a cero el paquete se destruye 
+
+	 
+cada protocolo consta de campos para diferentes actividades
+ (dentro de cada campo vienen uno y ceros, para la identificacion de la maquina) 
+Envio de informacion
+Data ---> nivel aplicacion
+|
+| 
+Trasporte ----> contiene la informacion de nivel de trasporte (secuenciar, nivel de errores) 
+|
+|
+red----> contiene la data y el trasporte ( origen  y destino) 
+|
+|
+Nivel de enlace de datos-----> contiene la informacion mas un penload
+|
+|
+Fisica---> impulsos elecetricos 
+
+Recibir informacio
+quita las capas del envio para poder obtener la informacion, proceso reverso
+protocolos
+codificacion
+tamaño
+control del buf o taiming
+
+Direcciones ip: se denominan capa 3 por ser nivel de red 
+D+irrecines mac nivel 2 por ser de enlace de datos
+La trama es al pdu de ethernet 
+cunando la trama pasa por los difrentes dispositivos, la ip de origen y destino (capa 3)  se mantienen y las direcciones mac son las que cambian
+
+)
